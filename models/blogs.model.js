@@ -50,7 +50,7 @@ async function deleteBlogById(blogId) {
 }
 
 async function deleteAllBlogs() {
-  const blogsCount = getBlogsCount();
+  const blogsCount = await getBlogsCount();
   const { deletedCount } = await Blogs.deleteMany({});
 
   if (deletedCount === blogsCount && deletedCount !== 0) {
