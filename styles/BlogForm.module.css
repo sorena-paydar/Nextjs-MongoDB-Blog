@@ -1,0 +1,8 @@
+.blogForm {
+  display: flex;
+  justify-content: center;
+}
+
+.sendButton {
+  margin-left: auto;
+}
