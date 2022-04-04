@@ -1,0 +1,7 @@
+.blogsGrid {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+  padding: 0;
+  margin-top: 20px;
+}
