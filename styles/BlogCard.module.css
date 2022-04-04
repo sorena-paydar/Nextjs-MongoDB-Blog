@@ -1,0 +1,65 @@
+.blogCard {
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blogDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.author {
+  font-size: 2rem;
+}
+
+.date {
+  margin-left: 15px;
+}
+
+.blogContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  font-size: 1.5rem;
+}
+
+.deleteButton {
+  background-color: #f03535;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.deleteButton:hover,
+.deleteButton:focus {
+  background-color: #f95454;
+}
