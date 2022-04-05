@@ -2,6 +2,7 @@ import { Form, Input, SubmitButton } from "formik-antd";
 import { Formik } from "formik";
 import { httpAddNewBlog } from "../hooks/requests";
 import styles from "../../styles/BlogForm.module.css";
+import useStore from "../zustand/store";
 
 const styleProps = {
   style: {
@@ -10,10 +11,11 @@ const styleProps = {
 };
 
 const BlogForm = () => {
+  const addBlog = useStore((state) => state.addBlog);
   const onSubmit = async (values, { resetForm }) => {
-    await httpAddNewBlog(values);
-
-    setTimeout(() => resetForm(), 500);
+    const blog = await httpAddNewBlog(values);
+    addBlog(blog);
+    resetForm();
   };
 
   return (
