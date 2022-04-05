@@ -4,31 +4,58 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  width: 600px;
+  max-height: 180px;
+  overflow-y: hidden;
+  transition: max-height 0.25s ease-out;
+  position: relative;
 }
 
-.blogDetails {
+.blogCard:hover {
+  max-height: 500px;
+  transition: max-height 0.5s ease-in;
+}
+
+.header {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
-}
-
-.author {
-  font-size: 2rem;
-}
-
-.date {
-  margin-left: 15px;
-}
-
-.blogContainer {
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.content {
+.author {
   font-size: 1.5rem;
+}
+
+.date {
+  color: #818181;
+  margin-left: 15px;
+}
+
+.blogContent {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.content {
+  font-size: 1rem;
+  inline-size: 100%;
+  overflow-wrap: break-word;
+}
+
+.blogCard:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(transparent 150px, white);
+}
+
+.blogCard:hover:before {
+  display: none;
 }
 
 .deleteButton {
@@ -38,25 +65,13 @@
   box-sizing: border-box;
   color: #ffffff;
   cursor: pointer;
-  display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   font-size: 14px;
   font-weight: 500;
   height: 40px;
-  line-height: 20px;
-  list-style: none;
-  margin: 0;
-  outline: none;
   padding: 10px 16px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
   transition: color 100ms;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
 }
 
 .deleteButton:hover,
