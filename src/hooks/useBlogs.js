@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import useStore from "../zustand/store";
 
 import { httpGetAllBlogs } from "./requests";
 
 function useBlogs() {
-  const [blogs, saveBlogs] = useState([]);
+  const blogs = useStore((state) => state.blogs);
+  const addBlogs = useStore((state) => state.addBlogs);
 
   useEffect(async () => {
     const fetchedBlogs = await httpGetAllBlogs();
-    saveBlogs(fetchedBlogs);
-  }, [blogs, saveBlogs]);
+    addBlogs(fetchedBlogs);
+  }, []);
 
   return blogs;
 }
