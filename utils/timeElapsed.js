@@ -29,6 +29,10 @@ function timeElapsed(timestamp) {
     return Math.floor(interval) + " minutes ago";
   }
 
+  if (seconds === 0) {
+    return "Now";
+  }
+
   return Math.floor(seconds) + " seconds ago";
 }
 
