@@ -20,10 +20,8 @@ const BlogForm = () => {
 
   return (
     <div className={styles.blogForm}>
-      <Formik
-        initialValues={{}}
-        onSubmit={onSubmit}
-        render={() => (
+      <Formik initialValues={{}} onSubmit={onSubmit}>
+        {() => (
           <Form>
             <Input name="author" placeholder="Name" {...styleProps} />
             <Input.TextArea
@@ -35,7 +33,7 @@ const BlogForm = () => {
             <SubmitButton>SEND</SubmitButton>
           </Form>
         )}
-      />
+      </Formik>
     </div>
   );
 };
