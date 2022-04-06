@@ -1,8 +1,17 @@
 .blogForm {
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 20px 0;
 }
 
-.sendButton {
-  margin-left: auto;
+.authorInput,
+.contentTextarea textarea {
+  border-radius: 20px !important;
+  border-width: 2px !important;
+}
+
+.sendButtonWrapper {
+  float: right;
+  margin-top: 10px;
 }
