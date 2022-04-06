@@ -12,6 +12,8 @@ const useStore = create((set) => ({
       });
       return { blogs: blogs };
     }),
+
+  deleteBlogs: () => set(() => ({ blogs: [] })),
 }));
 
 export default useStore;

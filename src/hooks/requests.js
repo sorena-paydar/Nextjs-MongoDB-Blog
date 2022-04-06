@@ -19,7 +19,9 @@ async function httpAddNewBlog(blog) {
 }
 
 async function httpDeleteAllBlogs() {
-  const response = await fetch(env.API_URL);
+  const response = await fetch(env.API_URL, {
+    method: "DELETE",
+  });
   return await response.json();
 }
 
