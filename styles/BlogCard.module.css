@@ -23,6 +23,11 @@
   align-items: center;
 }
 
+.blogDetails {
+  display: flex;
+  align-items: center;
+}
+
 .author {
   font-size: 1.5rem;
 }
@@ -56,25 +61,4 @@
 
 .blogCard:hover:before {
   display: none;
-}
-
-.deleteButton {
-  background-color: #f03535;
-  border-radius: 8px;
-  border-style: none;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  height: 40px;
-  padding: 10px 16px;
-  transition: color 100ms;
-}
-
-.deleteButton:hover,
-.deleteButton:focus {
-  background-color: #f95454;
 }

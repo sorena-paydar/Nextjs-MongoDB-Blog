@@ -2,6 +2,7 @@ import styles from "../../styles/BlogCard.module.css";
 import timeElapsed from "../../utils/timeElapsed";
 import { httpDeleteBlogById } from "../hooks/requests";
 import useStore from "../zustand/store";
+import { Button } from "antd";
 
 const BlogCard = ({ blog }) => {
   const { blogId, author, content, date } = blog;
@@ -25,16 +26,16 @@ const BlogCard = ({ blog }) => {
   return (
     <li className={styles.blogCard}>
       <div className={styles.header}>
-        <div>
+        <div className={styles.blogDetails}>
           <span className={styles.author}>{author}</span>
           <span className={styles.date}>
             {localDate} • {timeDiff}
           </span>
         </div>
 
-        <button className={styles.deleteButton} onClick={deleteHandler}>
+        <Button type="default" shape="round" danger onClick={deleteHandler}>
           DELETE
-        </button>
+        </Button>
       </div>
 
       <div className={styles.blogContent}>
