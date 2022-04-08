@@ -5,17 +5,19 @@ import {
 } from "../../models/blogs.model";
 
 import mongoConnect from "../../utils/mongo";
+import { getPagination } from "../../utils/query";
 import validateBlog from "../../utils/validator";
 
 mongoConnect();
 
 export default async function httpBlogsHandler(req, res) {
-  const { method, body } = req;
+  const { method, body, query } = req;
 
   switch (method) {
     case "GET":
       try {
-        res.status(200).json(await getAllBlogs());
+        const { limit, skip } = getPagination(query);
+        res.status(200).json(await getAllBlogs(limit, skip));
       } catch (err) {
         res.status(400).json({ error: "An error occurred!" });
       }
