@@ -12,8 +12,11 @@ async function getLatestBlogId() {
   return latestBlog.blogId + 1;
 }
 
-async function getAllBlogs() {
-  return await Blogs.find({}, { _id: 0, __v: 0 });
+async function getAllBlogs(limit, skip) {
+  return await Blogs.find({}, { _id: 0, __v: 0 })
+    .sort({ blogId: 1 })
+    .skip(skip)
+    .limit(limit);
 }
 
 async function getBlogsCount() {
